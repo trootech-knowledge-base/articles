@@ -1,1 +1,1 @@
-Sitemap: /trootech-knowledgebase/sitemap.xml
+Sitemap: /articles/sitemap.xml
