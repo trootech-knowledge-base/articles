@@ -197,7 +197,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
   window.addEventListener("load", initPhotoSwipe);
 </script>
-<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -914,7 +913,7 @@ function googleTranslateElementInit() {
 
 
 
-    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
   </div>
 <div class="post-tags">
 <a class="post-tag" href="/articles/tags.html#guide">#guide</a><a class="post-tag" href="/articles/tags.html#react">#react</a>
@@ -927,109 +926,102 @@ function googleTranslateElementInit() {
 
 <p>React is a JavaScript library for building user interfaces. It makes it painless to create interactive UIs with reusable components.</p>
 
-<p>2nd paragraph. <em>Functional Components</em>, <strong>Class Components</strong>, and <code class="language-plaintext highlighter-rouge">JSX</code>. Itemized lists look like:</p>
+<h2 id="introduction">Introduction</h2>
+
+<p>React enables developers to build fast, scalable, and simple user interfaces. Some key features include:</p>
 
 <ul>
-  <li>Declarative UI</li>
-  <li>Component-Based</li>
-  <li>Learn Once, Write Anywhere</li>
+  <li>
+<strong>Declarative UI</strong>: React makes it easy to design interactive UIs with simple component structures.</li>
+  <li>
+<strong>Component-Based</strong>: Build encapsulated components that manage their state and compose them to make complex UIs.</li>
+  <li>
+<strong>Learn Once, Write Anywhere</strong>: Use React to develop web and mobile applications efficiently.</li>
 </ul>
 
-<p>Note that — not considering the asterisk — the actual text content starts at 4-columns in.</p>
-
 <blockquote>
-  <p>React allows you to build encapsulated components.</p>
-
-  <p>They manage their own state and update efficiently when data changes.</p>
+  <p>React allows you to build encapsulated components that manage their state and update efficiently when data changes.</p>
 </blockquote>
 
-<p>Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., “React versions 16–18”). Three dots … will be converted to an ellipsis.</p>
+<hr>
 
-<h2 id="an-h2-header">An h2 header</h2>
+<h2 id="core-concepts">Core Concepts</h2>
 
-<p>Here’s a numbered list of core React concepts:</p>
+<h3 id="jsx">JSX</h3>
+<p>JSX allows you to write HTML inside JavaScript. Example:</p>
 
-<ol>
-  <li>Components and Props</li>
-  <li>State and Lifecycle</li>
-  <li>Handling Events</li>
-  <li>Conditional Rendering</li>
-</ol>
-
-<p>Note again how the actual text starts at 4 columns in (4 characters from the left side). Here’s a code sample:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function Welcome(props) {
-    return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
-}
-</code></pre></div></div>
-
-<p>As you probably guessed, indented 4 spaces. By the way, instead of indenting the block, you can use delimited blocks, if you like:</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return </span><span class="p">(</span>
-        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to React<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">);</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Welcome</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>(which makes copying &amp; pasting easier). You can optionally mark the delimited block for syntax highlighting:</p>
+<h3 id="components-and-props">Components and Props</h3>
+<p>React applications are built using components. There are two types:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<ol>
+  <li><strong>Functional Components</strong></li>
+  <li><strong>Class Components</strong></li>
+</ol>
+
+<p>Example of a functional component:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Greeting</span><span class="p">({</span> <span class="nx">name</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">name</span><span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="state-and-lifecycle">State and Lifecycle</h3>
+<p>State allows components to manage changing data. Example:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nf">Counter</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-    <span class="k">return </span><span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Count</span><span class="p">:</span> <span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nf">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">Increment</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>    <span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Count: <span class="si">{</span><span class="nx">count</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>Increment<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="an-h3-header">An h3 header</h3>
+<hr>
 
-<p>Now a nested list:</p>
+<h2 id="setting-up-a-react-project">Setting Up a React Project</h2>
+
+<p>Follow these steps to get started:</p>
 
 <ol>
   <li>
-    <p>First, install React:</p>
+    <p>Install React:</p>
 
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">npm install react</code></li>
-      <li><code class="language-plaintext highlighter-rouge">npm install react-dom</code></li>
-    </ul>
-  </li>
-  <li>
-    <p>Create a new project:</p>
-
-    <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>  npx create-react-app my-app
-  <span class="nb">cd </span>my-app
-  npm start
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>npx create-react-app my-app
+<span class="nb">cd </span>my-app
+npm start
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Start coding!</p>
+    <p>Start coding:</p>
 
-    <p>Follow these steps:</p>
-
-    <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>import React from 'react';
-function App() {
-    return &lt;h1&gt;Hello React!&lt;/h1&gt;;
-}
+    <div class="language-jsx highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to React!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
 </code></pre></div>    </div>
-
-    <p>Export the component and use it in your project.</p>
+  </li>
+  <li>
+    <p>Run the project and see the output in your browser.</p>
   </li>
 </ol>
 
-<p>Here’s a link to <a href="https://reactjs.org">React Docs</a>, to a <a href="local-component.html">local component</a>, and to a <a href="#an-h2-header">section heading in the current doc</a>. Here’s a footnote <sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>.</p>
+<hr>
 
-<p>Tables can look like this:</p>
+<h2 id="react-features-overview">React Features Overview</h2>
 
 <table>
   <thead>
@@ -1041,76 +1033,30 @@ function App() {
   <tbody>
     <tr>
       <td>JSX</td>
-      <td>JavaScript syntax extension</td>
+      <td>JavaScript syntax extension for writing UI components</td>
     </tr>
     <tr>
       <td>Components</td>
-      <td>Reusable UI elements</td>
+      <td>Reusable and self-contained building blocks</td>
     </tr>
     <tr>
       <td>Virtual DOM</td>
-      <td>Efficient rendering</td>
+      <td>Efficiently updates the UI without re-rendering the whole DOM</td>
     </tr>
     <tr>
       <td>Hooks</td>
-      <td>State &amp; lifecycle without classes</td>
+      <td>Enables functional components to manage state and side effects</td>
     </tr>
   </tbody>
 </table>
-
-<p>Table: React core features.</p>
-
-<p>(The above is the caption for the table.)</p>
-
-<p>A horizontal rule follows.</p>
 
 <hr>
 
-<p>Here’s a definition list:</p>
+<h2 id="conclusion">Conclusion</h2>
 
-<dl>
-  <dt>JSX</dt>
-  <dd>A syntax extension that lets you write HTML in JavaScript.</dd>
-  <dt>State</dt>
-  <dd>A component’s memory in React.</dd>
-  <dt>Props</dt>
-  <dd>Arguments passed to React components.</dd>
-</dl>
+<p>React is a powerful UI library used by developers worldwide. Understanding its core concepts will help you build dynamic, scalable applications efficiently.</p>
 
-<p>Again, text is indented 4 spaces. (Put a blank line between each term and its definition to spread things out more.)</p>
-
-<p>Here’s a “line block” (note how whitespace is honored):</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>React is</td>
-    </tr>
-    <tr>
-      <td>a powerful</td>
-    </tr>
-    <tr>
-      <td>library for UI development.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>and images can be specified like so:</p>
-
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" title="React Framework"></p>
-
-<p>Inline math equation: $f(x) = x^2$. Display math should get its own line like so:</p>
-
-<p>$$y = mx + b$$</p>
-
-<p>And note that you can backslash-escape any punctuation characters which you wish to be displayed literally, ex.: `code`, *React*, etc.</p>
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1">
-      <p>React was originally created by Facebook. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">↩</a></p>
-    </li>
-  </ol>
-</div>
+<p>For more details, check out the <a href="https://reactjs.org">official React documentation</a>.</p>
 
 
     </div>
@@ -1123,32 +1069,32 @@ function App() {
       <div>Related Articles</div>
       <ul>
         <li class="">
-          <a class="post-link" href="/articles/example/2017/12/15/table-example.html" title="Table example">
-            Table example<span class="post-badges">
-  <span class="post-badge badge-top">TOP</span>
-  <span class="post-badge badge-new">NEW</span>
-</span>
-</a>
-        </li>
-<li class="top-post">
-          <a class="post-link" href="/articles/laravel/2025/03/26/laravel-installtion-guide-1.html" title="Laravel Installation Guide">
-            Laravel Installation Guide<span class="post-badges">
-  <span class="post-badge badge-top">TOP</span>
-  <span class="post-badge badge-new">NEW</span>
-</span>
-</a>
-        </li>
-<li class="top-post">
-          <a class="post-link" href="/articles/markdown/2017/06/10/quick-mardown-example.html" title="Quick markdown example">
-            Quick markdown example<span class="post-badges">
+          <a class="post-link" href="/articles/markdown/2018/05/26/mathjax-test.html" title="Mathjax Test">
+            Mathjax Test<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
 </a>
         </li>
 <li class="">
-          <a class="post-link" href="/articles/misc/2016/05/19/super-short-article.html" title="Some articles are just so short that we have to make the footer stick">
-            Some articles are just so short that we have to make the...<span class="post-badges">
+          <a class="post-link" href="/articles/markdown/2015/02/28/test-markdown.html" title="Test markdown">
+            Test markdown<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+<li class="">
+          <a class="post-link" href="/articles/junk/2017/05/20/this-post-demonstrates-post-content-styles.html" title="This post demonstrates post content styles">
+            This post demonstrates post content styles<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+<li class="top-post">
+          <a class="post-link" href="/articles/laravel/2025/03/27/laravel-installtion-guide.html" title="Laravel Installation Guide">
+            Laravel Installation Guide<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
