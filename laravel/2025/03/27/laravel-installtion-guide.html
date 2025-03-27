@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Laravel Installation Guide | Trootech Knowledgebase</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="Laravel Installation Guide">
+<meta name="author" content="Samir Wadiwala">
+<meta property="og:locale" content="en">
+<meta name="description" content="This guide walks you through installing Laravel step by step.">
+<meta property="og:description" content="This guide walks you through installing Laravel step by step.">
+<link rel="canonical" href="/trootech-knowledgebase/laravel/2025/03/27/laravel-installtion-guide.html">
+<meta property="og:url" content="/trootech-knowledgebase/laravel/2025/03/27/laravel-installtion-guide.html">
+<meta property="og:site_name" content="Trootech Knowledgebase">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-03-27T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Laravel Installation Guide">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Samir Wadiwala"},"dateModified":"2025-03-27T00:00:00+00:00","datePublished":"2025-03-27T00:00:00+00:00","description":"This guide walks you through installing Laravel step by step.","headline":"Laravel Installation Guide","mainEntityOfPage":{"@type":"WebPage","@id":"/trootech-knowledgebase/laravel/2025/03/27/laravel-installtion-guide.html"},"url":"/trootech-knowledgebase/laravel/2025/03/27/laravel-installtion-guide.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="">
+  <link rel="canonical" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/trootech-knowledgebase/assets/css/main.css">
+  <script src="/trootech-knowledgebase/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/trootech-knowledgebase/feed.xml" title="Trootech Knowledgebase">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+<script src="//cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.7/umd/photoswipe-lightbox.umd.min.js" async></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.7/umd/photoswipe.umd.min.js" async></script>
+<link href="//cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.7/photoswipe.min.css" rel="stylesheet">
+<style>
+  .pswp .pswp__container .pswp__img {
+    background-color: white;
+  }
+</style>
+
+<script>
+  function initPhotoSwipe() {
+    let customOptions = {};
+
+    try {
+      const data = ``.replaceAll("=>", ":");
+      customOptions = JSON.parse(data);
+    } catch (e) {
+      console.info("Invalid custom photo previewer options! " + e.message);
+    }
+
+    // Define object and gallery options
+    const options = Object.assign(
+      {
+        gallery: "section.main",
+        children: "a.photo-swipe",
+        photo_scale: 2,
+        // dynamic import is not supported in UMD version
+        pswpModule: PhotoSwipe,
+      },
+      customOptions
+    );
+
+    const galleryEl = document.querySelector(options.gallery);
+    if (!galleryEl) {
+      return;
+    }
+
+    const imgEls = [];
+    const els = galleryEl.querySelectorAll("img:not(.emoji)");
+    els.forEach((el) => {
+      if (el.src.trim() == "") {
+        return;
+      }
+      if (!imgEls.includes(el)) {
+        imgEls.push(el);
+      }
+    });
+
+    if (imgEls.length === 0) {
+      return;
+    }
+
+    imgEls.forEach((imgEl) => {
+      imgEl.outerHTML = `
+      <a class="photo-swipe"
+        href="${imgEl.src}"
+        data-pswp-width="${
+          Math.max(imgEl.naturalWidth, imgEl.width) * options.photo_scale
+        }"
+        data-pswp-height="${
+          Math.max(imgEl.naturalHeight, imgEl.height) * options.photo_scale
+        }"
+        data-pswp-caption="${imgEl.getAttribute("caption") || imgEl.alt}"
+        target="_blank">
+        ${imgEl.outerHTML}
+      </a>`;
+    });
+
+    // Initialize PhotoSwipe 5
+    var lightbox = new PhotoSwipeLightbox(options);
+
+    lightbox.init();
+  }
+
+  window.addEventListener("load", initPhotoSwipe);
+</script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<!-- <pre>
+        [&quot;404.html&quot;, &quot;about.html&quot;, &quot;archives.html&quot;, &quot;categories.html&quot;, &quot;index.html&quot;, &quot;tags.html&quot;, &quot;feed.xml&quot;, &quot;sitemap.xml&quot;, &quot;robots.txt&quot;]
+        [&quot;index.html&quot;, &quot;categories.html&quot;]
+      </pre> -->
+
+      <span class="site-brand"><a class="site-brand-inner" rel="author" href="/trootech-knowledgebase/">
+  <img class="site-favicon" title="Trootech Knowledgebase" src="" onerror="this.style.display='none'">
+  Trootech Knowledgebase
+</a>
+</span><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+
+          <a class="page-link" href="/">HOME</a>
+          <a class="page-link" href="/categories.html">CATEGORIES</a>
+
+          <!--<a class="page-link" href="/trootech-knowledgebase/">HOME</a><a class="page-link" href="/trootech-knowledgebase/categories.html">CATEGORIES</a>-->
+
+          <!--
+
+
+
+
+
+
+
+
+
+<div class="page-link" style="display: inline;">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<div class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+</div>-->
+        </div>
+      </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;
+
+     /*  
+      documentElement.setAttribute("data-header-transparent", "");
+       */
+
+      var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function (e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(data:image/webp;base64,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)"></div>
+        <img class="img-placeholder" src="data:image/webp;base64,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">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner">
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">Laravel Installation Guide</h1>
+  <h2 class="post-subtitle">Step-by-step guide to installing Laravel</h2>
+
+  <div class="post-meta">
+    <time class="dt-published" datetime="2025-03-27T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Mar 27, 2025
+    </time>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+  </div>
+<div class="post-tags">
+<a class="post-tag" href="/trootech-knowledgebase/tags.html#installation">#installation</a><a class="post-tag" href="/trootech-knowledgebase/tags.html#Laravel">#Laravel</a><a class="post-tag" href="/trootech-knowledgebase/tags.html#guide">#guide</a>
+</div></header>
+</div>
+    </div>
+  </section><script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <p>This guide walks you through installing <a href="https://laravel.com/">Laravel</a> step by step.</p>
+
+<h2 id="laravel-installation-guide">Laravel Installation Guide</h2>
+
+<p><em>Note: This guide assumes you have basic knowledge of PHP and Composer.</em></p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before installing Laravel, ensure you have the following:</p>
+
+<ul>
+  <li>
+<strong>PHP (&gt;= 8.0)</strong> – Laravel requires PHP 8.0 or higher.</li>
+  <li>
+<strong>Composer</strong> – Laravel uses Composer to manage dependencies.</li>
+  <li>
+<strong>Web Server</strong> – Apache or Nginx.</li>
+  <li>
+<strong>Database</strong> – MySQL, PostgreSQL, SQLite, or SQL Server.</li>
+</ul>
+
+<h2 id="installing-laravel">Installing Laravel</h2>
+
+<h3 id="using-composer">Using Composer</h3>
+
+<p>Run the following command in your terminal:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project <span class="nt">--prefer-dist</span> laravel/laravel my-laravel-app
+</code></pre></div></div>
+
+<p>This command installs Laravel in a new directory called <code class="language-plaintext highlighter-rouge">my-laravel-app</code>.</p>
+
+<h3 id="verifying-installation">Verifying Installation</h3>
+
+<p>Navigate into your project folder:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>my-laravel-app
+</code></pre></div></div>
+
+<p>Start the local development server:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php artisan serve
+</code></pre></div></div>
+
+<p>Open <code class="language-plaintext highlighter-rouge">http://127.0.0.1:8000</code> in your browser. If you see the Laravel welcome page, your installation is successful.</p>
+
+<h2 id="configuring-environment">Configuring Environment</h2>
+
+<p>Laravel uses an <code class="language-plaintext highlighter-rouge">.env</code> file for environment configuration. Copy the example file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> .env.example .env
+</code></pre></div></div>
+
+<p>Then generate an application key:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php artisan key:generate
+</code></pre></div></div>
+
+<h2 id="database-configuration">Database Configuration</h2>
+
+<p>Update your <code class="language-plaintext highlighter-rouge">.env</code> file with database details:</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">DB_CONNECTION</span><span class="p">=</span><span class="s">mysql</span>
+<span class="py">DB_HOST</span><span class="p">=</span><span class="s">127.0.0.1</span>
+<span class="py">DB_PORT</span><span class="p">=</span><span class="s">3306</span>
+<span class="py">DB_DATABASE</span><span class="p">=</span><span class="s">laravel</span>
+<span class="py">DB_USERNAME</span><span class="p">=</span><span class="s">root</span>
+<span class="py">DB_PASSWORD</span><span class="p">=</span>
+</code></pre></div></div>
+
+<p>Run migrations to set up the database:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php artisan migrate
+</code></pre></div></div>
+
+<h2 id="running-your-laravel-application">Running Your Laravel Application</h2>
+
+<p>Use the built-in PHP server:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php artisan serve
+</code></pre></div></div>
+
+<p>Or configure a virtual host in Apache/Nginx for better performance.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>You have successfully installed Laravel! Explore the framework and build amazing applications.</p>
+
+<p>For more details, visit the official <a href="https://laravel.com/docs">Laravel documentation</a>.</p>
+
+<hr>
+
+<h2 id="additional-resources">Additional Resources</h2>
+
+<ul>
+  <li><a href="https://laravel.com/docs">Laravel Documentation</a></li>
+  <li><a href="https://getcomposer.org/doc/">Composer Documentation</a></li>
+  <li><a href="https://www.php.net/">PHP Official Site</a></li>
+</ul>
+
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/trootech-knowledgebase/laravel/2025/03/26/laravel-installtion-guide-1.html" title="Laravel Installation Guide">Laravel Installation Guide</a><a class="next" href="/trootech-knowledgebase/jekyll/2025/03/27/welcome-to-jekyll-1.html" title="Welcome to Jekyll - 1!">Welcome to Jekyll - 1!</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li class="top-post">
+          <a class="post-link" href="/trootech-knowledgebase/laravel/2025/03/27/laravel-installtion-guide.html" title="Laravel Installation Guide">
+            Laravel Installation Guide<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+<li class="">
+          <a class="post-link" href="/trootech-knowledgebase/misc/2016/05/20/super-long-article.html" title="Some articles are just so long they deserve a really long title to see if things will break well">
+            Some articles are just so long they deserve a really long title...<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+<li class="">
+          <a class="post-link" href="/trootech-knowledgebase/markdown/2015/02/28/test-markdown.html" title="Test markdown">
+            Test markdown<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+<li class="">
+          <a class="post-link" href="/trootech-knowledgebase/markdown/2016/01/01/another-test-markdown.html" title="Another test markdown">
+            Another test markdown<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --></section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/trootech-knowledgebase/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2025 Samir Wadiwala</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/trootech-knowledgebase/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
