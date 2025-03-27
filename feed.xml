@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/articles/feed.xml" rel="self" type="application/atom+xml" /><link href="/articles/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-03-27T10:52:45+00:00</updated><id>/articles/feed.xml</id><title type="html">Trootech Knowledgebase</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Samir Wadiwala</name></author><entry><title type="html">Laravel Installation Guide</title><link href="/articles/laravel/2025/03/27/laravel-installtion-guide.html" rel="alternate" type="text/html" title="Laravel Installation Guide" /><published>2025-03-27T00:00:00+00:00</published><updated>2025-03-27T00:00:00+00:00</updated><id>/articles/laravel/2025/03/27/laravel-installtion-guide</id><content type="html" xml:base="/articles/laravel/2025/03/27/laravel-installtion-guide.html"><![CDATA[<p>This guide walks you through installing <a href="https://laravel.com/">Laravel</a> step by step.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/articles/feed.xml" rel="self" type="application/atom+xml" /><link href="/articles/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-03-27T10:55:42+00:00</updated><id>/articles/feed.xml</id><title type="html">Trootech Knowledgebase</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Samir Wadiwala</name></author><entry><title type="html">Laravel Installation Guide</title><link href="/articles/laravel/2025/03/27/laravel-installtion-guide.html" rel="alternate" type="text/html" title="Laravel Installation Guide" /><published>2025-03-27T00:00:00+00:00</published><updated>2025-03-27T00:00:00+00:00</updated><id>/articles/laravel/2025/03/27/laravel-installtion-guide</id><content type="html" xml:base="/articles/laravel/2025/03/27/laravel-installtion-guide.html"><![CDATA[<p>This guide walks you through installing <a href="https://laravel.com/">Laravel</a> step by step.</p>
 
 <h2 id="laravel-installation-guide">Laravel Installation Guide</h2>
 
@@ -92,136 +92,7 @@
   <li><a href="https://laravel.com/docs">Laravel Documentation</a></li>
   <li><a href="https://getcomposer.org/doc/">Composer Documentation</a></li>
   <li><a href="https://www.php.net/">PHP Official Site</a></li>
-</ul>]]></content><author><name>Samir Wadiwala</name></author><category term="Laravel" /><category term="installation" /><category term="Laravel" /><category term="guide" /><summary type="html"><![CDATA[This guide walks you through installing Laravel step by step.]]></summary></entry><entry><title type="html">Quick React Guide</title><link href="/articles/react/2025/03/27/react-basics.html" rel="alternate" type="text/html" title="Quick React Guide" /><published>2025-03-27T00:00:00+00:00</published><updated>2025-03-27T00:00:00+00:00</updated><id>/articles/react/2025/03/27/react-basics</id><content type="html" xml:base="/articles/react/2025/03/27/react-basics.html"><![CDATA[<p><img src="https://reactjs.org/logo-og.png" alt="banner" /></p>
-
-<p>React is a JavaScript library for building user interfaces. It makes it painless to create interactive UIs with reusable components.</p>
-
-<h2 id="introduction">Introduction</h2>
-
-<p>React enables developers to build fast, scalable, and simple user interfaces. Some key features include:</p>
-
-<ul>
-  <li><strong>Declarative UI</strong>: React makes it easy to design interactive UIs with simple component structures.</li>
-  <li><strong>Component-Based</strong>: Build encapsulated components that manage their state and compose them to make complex UIs.</li>
-  <li><strong>Learn Once, Write Anywhere</strong>: Use React to develop web and mobile applications efficiently.</li>
-</ul>
-
-<blockquote>
-  <p>React allows you to build encapsulated components that manage their state and update efficiently when data changes.</p>
-</blockquote>
-
-<hr />
-
-<h2 id="core-concepts">Core Concepts</h2>
-
-<h3 id="jsx">JSX</h3>
-<p>JSX allows you to write HTML inside JavaScript. Example:</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Welcome</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="components-and-props">Components and Props</h3>
-<p>React applications are built using components. There are two types:</p>
-
-<ol>
-  <li><strong>Functional Components</strong></li>
-  <li><strong>Class Components</strong></li>
-</ol>
-
-<p>Example of a functional component:</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Greeting</span><span class="p">({</span> <span class="nx">name</span> <span class="p">})</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">name</span><span class="si">}</span>!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="state-and-lifecycle">State and Lifecycle</h3>
-<p>State allows components to manage changing data. Example:</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nf">Counter</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-
-  <span class="k">return </span><span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Count: <span class="si">{</span><span class="nx">count</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>Increment<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="setting-up-a-react-project">Setting Up a React Project</h2>
-
-<p>Follow these steps to get started:</p>
-
-<ol>
-  <li>
-    <p>Install React:</p>
-
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx create-react-app my-app
-<span class="nb">cd </span>my-app
-npm start
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Start coding:</p>
-
-    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to React!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
-<span class="p">}</span>
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Run the project and see the output in your browser.</p>
-  </li>
-</ol>
-
-<hr />
-
-<h2 id="react-features-overview">React Features Overview</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>JSX</td>
-      <td>JavaScript syntax extension for writing UI components</td>
-    </tr>
-    <tr>
-      <td>Components</td>
-      <td>Reusable and self-contained building blocks</td>
-    </tr>
-    <tr>
-      <td>Virtual DOM</td>
-      <td>Efficiently updates the UI without re-rendering the whole DOM</td>
-    </tr>
-    <tr>
-      <td>Hooks</td>
-      <td>Enables functional components to manage state and side effects</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>React is a powerful UI library used by developers worldwide. Understanding its core concepts will help you build dynamic, scalable applications efficiently.</p>
-
-<p>For more details, check out the <a href="https://reactjs.org">official React documentation</a>.</p>]]></content><author><name>Samir Wadiwala</name></author><category term="react" /><category term="guide" /><category term="react" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Welcome to Jekyll - 1!</title><link href="/articles/jekyll/2025/03/27/welcome-to-jekyll-1.html" rel="alternate" type="text/html" title="Welcome to Jekyll - 1!" /><published>2025-03-27T00:00:00+00:00</published><updated>2025-03-27T00:00:00+00:00</updated><id>/articles/jekyll/2025/03/27/welcome-to-jekyll-1</id><content type="html" xml:base="/articles/jekyll/2025/03/27/welcome-to-jekyll-1.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+</ul>]]></content><author><name>Samir Wadiwala</name></author><category term="Laravel" /><category term="installation" /><category term="Laravel" /><category term="guide" /><summary type="html"><![CDATA[This guide walks you through installing Laravel step by step.]]></summary></entry><entry><title type="html">Welcome to Jekyll - 1!</title><link href="/articles/jekyll/2025/03/27/welcome-to-jekyll-1.html" rel="alternate" type="text/html" title="Welcome to Jekyll - 1!" /><published>2025-03-27T00:00:00+00:00</published><updated>2025-03-27T00:00:00+00:00</updated><id>/articles/jekyll/2025/03/27/welcome-to-jekyll-1</id><content type="html" xml:base="/articles/jekyll/2025/03/27/welcome-to-jekyll-1.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>To add new posts, simply add a file in the <code class="language-plaintext highlighter-rouge">_posts</code> directory that follows the convention <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
@@ -937,4 +808,17 @@ This feature is contributed by <a href="https://github.com/Lucas-C">Lucas-C</a>.
 <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG5BbmltYWwgPHwtLSBEdWNrXG5BbmltYWwgPHwtLSBGaXNoXG5BbmltYWwgPHwtLSBaZWJyYVxuQW5pbWFsIDogK2ludCBhZ2VcbkFuaW1hbCA6ICtTdHJpbmcgZ2VuZGVyXG5BbmltYWw6ICtpc01hbW1hbCgpXG5BbmltYWw6ICttYXRlKClcbmNsYXNzIER1Y2t7XG4rU3RyaW5nIGJlYWtDb2xvclxuK3N3aW0oKVxuK3F1YWNrKClcbn1cbmNsYXNzIEZpc2h7XG4taW50IHNpemVJbkZlZXRcbi1jYW5FYXQoKVxufVxuY2xhc3MgWmVicmF7XG4rYm9vbCBpc193aWxkXG4rcnVuKClcbn0iLCJtZXJtYWlkIjpudWxsfQ" /></p>
 
 <h3 id="4-state-diagram">4. State diagram</h3>
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoic3RhdGVEaWFncmFtXG5bKl0gLS0-IFN0aWxsXG5TdGlsbCAtLT4gWypdXG4lJS1cblN0aWxsIC0tPiBNb3Zpbmdcbk1vdmluZyAtLT4gU3RpbGxcbk1vdmluZyAtLT4gQ3Jhc2hcbkNyYXNoIC0tPiBbKl0iLCJtZXJtYWlkIjpudWxsfQ" /></p>]]></content><author><name>Samir Wadiwala</name></author><category term="example" /><category term="mermaid" /><summary type="html"><![CDATA[1. Pie chart]]></summary></entry></feed>
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoic3RhdGVEaWFncmFtXG5bKl0gLS0-IFN0aWxsXG5TdGlsbCAtLT4gWypdXG4lJS1cblN0aWxsIC0tPiBNb3Zpbmdcbk1vdmluZyAtLT4gU3RpbGxcbk1vdmluZyAtLT4gQ3Jhc2hcbkNyYXNoIC0tPiBbKl0iLCJtZXJtYWlkIjpudWxsfQ" /></p>]]></content><author><name>Samir Wadiwala</name></author><category term="example" /><category term="mermaid" /><summary type="html"><![CDATA[1. Pie chart]]></summary></entry><entry><title type="html">Plantuml example</title><link href="/articles/example/2017/12/04/plantuml-example.html" rel="alternate" type="text/html" title="Plantuml example" /><published>2017-12-04T00:00:00+00:00</published><updated>2017-12-04T00:00:00+00:00</updated><id>/articles/example/2017/12/04/plantuml-example</id><content type="html" xml:base="/articles/example/2017/12/04/plantuml-example.html"><![CDATA[<h2 id="my-first-plantuml">My First PlantUML</h2>
+
+<h3 id="plantuml-block-1">PlantUML Block-1</h3>
+<p><img class="plantuml" src="http://www.plantuml.com/plantuml/svg/~h407374617274756d6c0a426f62202d3e20416c696365203a2068656c6c6f0a40656e64756d6c" /></p>
+
+<h3 id="plantuml-block-2">PlantUML Block-2</h3>
+<p><img class="plantuml" src="http://www.plantuml.com/plantuml/svg/~h407374617274756d6c0a426f62202d3e20416c696365203a2068656c6c6f20776f726c640a40656e64756d6c" /></p>
+
+<h3 id="plantuml-block-3">PlantUML Block-3</h3>
+<p><img class="plantuml" src="http://www.plantuml.com/plantuml/svg/~h407374617274756d6c0a282a29202d2d3e2022496e697469616c697a6174696f6e220a0a69662022536f6d65205465737422207468656e0a20202d2d3e5b747275655d2022536f6d65204163746976697479220a20202d2d3e2022416e6f74686572206163746976697479220a20202d72696768742d3e20282a290a656c73650a20202d3e5b66616c73655d2022536f6d657468696e6720656c7365220a20202d2d3e5b456e64696e672070726f636573735d20282a290a656e6469660a40656e64756d6c" /></p>
+
+<h3 id="plantuml-block-4">PlantUML Block-4</h3>
+
+<p><img class="plantuml" src="http://www.plantuml.com/plantuml/svg/~h407374617274756d6c0a736b696e706172616d2068616e647772697474656e20747275650a0a736b696e706172616d2075736563617365207b0a20204261636b67726f756e64436f6c6f72204461726b536561477265656e0a2020426f72646572436f6c6f72204461726b536c617465477261790a0a20204261636b67726f756e64436f6c6f723c3c204d61696e203e3e2059656c6c6f77477265656e0a2020426f72646572436f6c6f723c3c204d61696e203e3e2059656c6c6f77477265656e0a0a20204172726f77436f6c6f72204f6c6976650a20204163746f72426f72646572436f6c6f7220626c61636b0a20204163746f72466f6e744e616d6520436f75726965720a0a20204163746f724261636b67726f756e64436f6c6f723c3c2048756d616e203e3e20476f6c640a7d0a0a55736572203c3c2048756d616e203e3e0a3a4d61696e2044617461626173653a206173204d7953716c203c3c204170706c69636174696f6e203e3e0a28537461727429203c3c204f6e652053686f74203e3e0a2855736520746865206170706c69636174696f6e29206173202855736529203c3c204d61696e203e3e0a0a55736572202d3e20285374617274290a55736572202d2d3e2028557365290a0a4d7953716c202d2d3e2028557365290a0a40656e64756d6c" /></p>]]></content><author><name>Samir Wadiwala</name></author><category term="example" /><category term="plantuml" /><summary type="html"><![CDATA[My First PlantUML]]></summary></entry></feed>
