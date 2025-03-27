@@ -28,7 +28,7 @@ jobs:
 
       # Build Jekyll Site
       - name: Build Jekyll Site
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build -d _site
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
