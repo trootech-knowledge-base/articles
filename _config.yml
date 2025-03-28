@@ -24,9 +24,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Trootech Knowledgebase
-email: samir.wadiwala@trootech.com
-author: Samir Wadiwala
+title: TRooTech Knowledgebase
+email: vishal.nakum@trootech.com
+author: TRooTech
 
 # Copyright setting
 # You can use any html code, currently below placeholders are available:
@@ -165,8 +165,8 @@ pages:
 # Page default value
 defaults:
   home:
-    heading: "Trootech Knowledgebase"
-    subheading: "Your one-stop shop for all Trootech knowledge"
+    heading: "TRooTech Knowledgebase"
+    subheading: "Unlock Insights, Innovations & Expertise"
     # banner: "Your image url"
 
 # Banner default settings
