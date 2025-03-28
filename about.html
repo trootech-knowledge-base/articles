@@ -196,6 +196,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
   window.addEventListener("load", initPhotoSwipe);
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("a").forEach(function (link) {
+      if (!link.hasAttribute("rel")) {
+        link.setAttribute("rel", "dofollow");
+      }
+    });
+  });
+</script>
 </head>
 <body>
 

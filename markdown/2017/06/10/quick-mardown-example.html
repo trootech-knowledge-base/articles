@@ -197,6 +197,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
   window.addEventListener("load", initPhotoSwipe);
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("a").forEach(function (link) {
+      if (!link.hasAttribute("rel")) {
+        link.setAttribute("rel", "dofollow");
+      }
+    });
+  });
+</script>
 <script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -1116,16 +1125,16 @@ which you wish to be displayed literally, ex.: `foo`, *bar*, etc.</p>
       <div>Related Articles</div>
       <ul>
         <li class="">
-          <a class="post-link" href="/articles/markdown/1/2025/02/28/test-markdown-1.html" title="Test markdown 1">
-            Test markdown 1<span class="post-badges">
+          <a class="post-link" href="/articles/markdown/2015/02/28/test-markdown.html" title="Test markdown">
+            Test markdown<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
 </a>
         </li>
 <li class="">
-          <a class="post-link" href="/articles/misc/2016/05/20/super-long-article.html" title="Some articles are just so long they deserve a really long title to see if things will break well">
-            Some articles are just so long they deserve a really long title...<span class="post-badges">
+          <a class="post-link" href="/articles/junk/2016/08/12/my-example-post.html" title="My Example Post">
+            My Example Post<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
@@ -1140,8 +1149,8 @@ which you wish to be displayed literally, ex.: `foo`, *bar*, etc.</p>
 </a>
         </li>
 <li class="">
-          <a class="post-link" href="/articles/markdown/2018/05/26/mathjax-test.html" title="Mathjax Test">
-            Mathjax Test<span class="post-badges">
+          <a class="post-link" href="/articles/example/2017/12/15/table-example.html" title="Table example">
+            Table example<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
