@@ -17,4 +17,13 @@
   {%- include extensions/code-highlight.html -%}
   {%- include extensions/photo-swipe.html -%}
   {%- include custom-head.html -%}
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("a").forEach(function (link) {
+      if (!link.hasAttribute("rel")) {
+        link.setAttribute("rel", "dofollow");
+      }
+    });
+  });
+</script>
 </head>
