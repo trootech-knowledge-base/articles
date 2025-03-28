@@ -5,7 +5,7 @@ description: "Discover the AI development costs across various industries in 202
 author: TRooTech
 categories: AI
 banner:
-  image: !(https://raw.githubusercontent.com/trootech-knowledge-base/articles/main/assets/images/banners/ai-development-costs-by-industry-what-you-should-expect-in-2025.jpg)
+  image: https://raw.githubusercontent.com/trootech-knowledge-base/articles/main/assets/images/banners/ai-development-costs-by-industry-what-you-should-expect-in-2025.jpg
 top: 1
 ---
 # AI Development Costs by Industry: What You Should Expect in 2025
